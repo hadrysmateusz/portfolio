@@ -1,13 +1,13 @@
 import React from "react"
 
 import App from "../components/App"
+import Hero from "../components/Hero"
 import SEO from "../components/seo"
-import FluidContainer from "../components/FluidContainer"
 
 const IndexPage = () => (
 	<App>
 		<SEO title="Home Page" />
-		<FluidContainer>Home</FluidContainer>
+		<Hero />
 	</App>
 )
 
