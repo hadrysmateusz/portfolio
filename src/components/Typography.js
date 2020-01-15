@@ -41,7 +41,7 @@ const heading = css`
 	${internalLinkStyles}
 `
 
-const H1 = styled.h1`
+export const H1 = styled.h1`
 	${heading}
 	font-size: 48px;
 	line-height: 72px;
@@ -50,7 +50,7 @@ const H1 = styled.h1`
 		line-height: 72px;
 	}
 `
-const H2 = styled.h2`
+export const H2 = styled.h2`
 	${heading}
 	font-size: 24px;
 	line-height: 36px;
@@ -59,7 +59,7 @@ const H2 = styled.h2`
 		line-height: 72px;
 	}
 `
-const H3 = styled.h3`
+export const H3 = styled.h3`
 	${heading}
 	font-size: 18px;
 	line-height: 24px;
@@ -68,9 +68,3 @@ const H3 = styled.h3`
 		line-height: 56px;
 	}
 `
-
-export const H = {
-	1: H1,
-	2: H2,
-	3: H3
-}
