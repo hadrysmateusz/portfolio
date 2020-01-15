@@ -33,11 +33,7 @@ const GlobalStyles = createGlobalStyle`
 body {
 	padding: 0;
 	margin: 0;
-
-	/* base typography */
 	font-weight: 400;
-	font-size: 1.6rem;
-	line-height: 1.5;
 	font-family: var(--font-stack);
 }
 `
