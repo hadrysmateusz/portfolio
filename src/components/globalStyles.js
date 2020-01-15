@@ -35,6 +35,8 @@ body {
 	margin: 0;
 	font-weight: 400;
 	font-family: var(--font-stack);
+	background: black;
+	color: white;
 }
 `
 
