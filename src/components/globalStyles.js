@@ -14,6 +14,9 @@ const GlobalStyles = createGlobalStyle`
 
 	--color-accent-pink: #f20476;
 	--color-accent-orange: #fd975e;
+
+	--gradient-accent: linear-gradient(90deg, var(--color-accent-pink) 0%, var(--color-accent-orange) 100%);
+
 	--border-radius-big: 60px;
 
 	--fw-light: 300;
