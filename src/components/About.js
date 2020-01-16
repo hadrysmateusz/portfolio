@@ -1,8 +1,10 @@
 import React from "react"
 import FluidContainer from "./FluidContainer"
 import styled from "styled-components"
+import PrimaryButton from "./PrimaryButton"
 
 import { H2, TextBlock } from "./Typography"
+import { gradientText } from "../styleUtils"
 
 const About = () => {
 	return (
@@ -12,11 +14,12 @@ const About = () => {
 					Web <AccentedText>Developer</AccentedText> &{" "}
 					<AccentedText>Designer</AccentedText>
 				</H2>
-				<TextBlock big>
+				<AboutTextBlock>
 					I love creating web applications, from <b>design</b> through <b>frontend</b> to{" "}
 					<b>server-side</b> code. <b>React</b> is my preferred framework, but I love
 					learning new things.
-				</TextBlock>
+				</AboutTextBlock>
+				<PrimaryButton>Contact Me</PrimaryButton>
 			</Wrapper>
 		</FluidContainer>
 	)
@@ -26,16 +29,25 @@ const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: flex-start;
 	padding: 100px 0;
 `
 
 const AccentedText = styled.span`
-	background: var(--gradient-accent);
-	background-clip: border-box;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	-webkit-box-decoration-break: clone;
-	box-decoration-break: clone;
+	${gradientText(`var(--gradient-accent)`)}
+`
+
+const AboutTextBlock = styled(TextBlock)`
+	max-width: var(--column-width);
+	margin: 0;
+	margin-bottom: 32px;
+
+	@media (min-width: 732px) {
+		margin: 0;
+		margin-bottom: 32px;
+		font-size: 24px;
+		line-height: 32px;
+	}
 `
 
 export default About
