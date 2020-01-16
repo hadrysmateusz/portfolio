@@ -44,7 +44,7 @@ const Section = styled.div`
 
 const NavLink = styled(Link)`
 	text-transform: uppercase;
-	font-weight: var(--fw-kubold);
+	font-weight: var(--fw-bold);
 	font-size: 24px;
 	letter-spacing: -0.01em;
 `

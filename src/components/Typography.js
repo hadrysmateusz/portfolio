@@ -34,6 +34,7 @@ export const TextBlock = styled.div`
 `
 
 const heading = css`
+	margin: 0;
 	font-weight: var(--fw-bold);
 	letter-spacing: -0.01em;
 	color: white;
