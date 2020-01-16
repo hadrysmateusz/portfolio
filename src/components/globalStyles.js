@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
 
 	--page-width: 1320px;
 	--page-padding: 20px;
+	--header-height: 60px;
 
 	--color-messenger: #009bfa;
 	--color-facebook: #3c5a99;
@@ -25,6 +26,11 @@ const GlobalStyles = createGlobalStyle`
 	--fw-semi-bold: 600;
 	--fw-bold: 700;
 	--fw-extra-bold: 800;
+}
+
+a,a:visited,a:link,a:hover {
+	color: inherit;
+	text-decoration: none;
 }
 
 *,

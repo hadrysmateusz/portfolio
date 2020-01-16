@@ -8,7 +8,7 @@ const Hero = () => {
 	return (
 		<Wrapper>
 			<FluidContainer>
-				<H1>MateuszHadryś</H1>
+				<H1>Mateusz Hadryś</H1>
 			</FluidContainer>
 		</Wrapper>
 	)
