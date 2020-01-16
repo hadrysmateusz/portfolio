@@ -8,13 +8,6 @@ const internalLinkStyles = css`
 	}
 `
 
-const textBlockBigOverrides = css`
-	@media (min-width: 732px) {
-		font-size: 24px;
-		line-height: 32px;
-	}
-`
-
 export const TextBlock = styled.div`
 	color: #e2e2e2;
 
@@ -27,8 +20,6 @@ export const TextBlock = styled.div`
 		font-size: 18px;
 		line-height: 24px;
 	}
-
-	${(p) => p.big && textBlockBigOverrides}
 
 	${internalLinkStyles}
 `
