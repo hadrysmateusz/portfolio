@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
 	--page-width: 1320px;
 	--page-padding: 20px;
 	--header-height: 60px;
+	--column-width: 640px;
 
 	--color-messenger: #009bfa;
 	--color-facebook: #3c5a99;
