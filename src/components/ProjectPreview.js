@@ -1,40 +1,28 @@
 import React from "react"
 import styled from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import { H3, TextBlock } from "./Typography"
 import PrimaryButton from "./PrimaryButton"
+import Button from "./Button"
 
-const ProjectPreview = ({ name }) => {
-	const data = useStaticQuery(graphql`
-		query {
-			previewImage: file(relativePath: { eq: "preview-vtg.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 300) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-		}
-	`)
-
-	console.log(data)
+const ProjectPreview = ({ name, image, description, liveLink, sourceLink }) => {
+	console.log(image)
 
 	return (
 		<Wrapper>
 			<ImageContainer>
-				<Img fluid={data.previewImage.childImageSharp.fluid} />
+				<Img fluid={image} />
 			</ImageContainer>
 			<H3>{name}</H3>
-			<TextBlock>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita cum dignissimos
-				dolorum temporibus modi! Eum, neque vero labore aut in possimus facere a saepe
-				cupiditate minus quibusdam optio, consequuntur delectus.
-			</TextBlock>
+			<TextBlock>{description}</TextBlock>
 			<ButtonContainer>
-				<PrimaryButton>Go to Website</PrimaryButton>
-				{/* <Button>Source Code</Button> */}
+				<a href={liveLink} target="_blank" rel="noreferrer noopener">
+					<PrimaryButton>Go to Website</PrimaryButton>
+				</a>
+				<a href={sourceLink} target="_blank" rel="noreferrer noopener">
+					<Button>Source Code</Button>
+				</a>
 			</ButtonContainer>
 		</Wrapper>
 	)
@@ -42,12 +30,12 @@ const ProjectPreview = ({ name }) => {
 
 const Wrapper = styled.div``
 const ImageContainer = styled.div`
-	height: 400px;
-	background: gray;
+	margin-bottom: 32px;
 `
 const ButtonContainer = styled.div`
 	display: grid;
 	grid-auto-flow: column;
+	grid-auto-columns: min-content;
 	gap: 24px;
 `
 
