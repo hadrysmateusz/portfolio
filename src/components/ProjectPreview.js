@@ -31,6 +31,19 @@ const ProjectPreview = ({ name, image, description, liveLink, sourceLink }) => {
 const Wrapper = styled.div``
 const ImageContainer = styled.div`
 	margin-bottom: 32px;
+	position: relative;
+	border-radius: var(--border-radius-md);
+	overflow: hidden;
+	::after {
+		display: block;
+		content: "";
+		background: rgba(0, 0, 0, 0.3);
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
 `
 const ButtonContainer = styled.div`
 	display: grid;
