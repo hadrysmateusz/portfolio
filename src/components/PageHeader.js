@@ -1,10 +1,28 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import FluidContainer from "./FluidContainer"
 
 const PageHeader = () => {
+	const data = useStaticQuery(graphql`
+		query {
+			allFile(filter: { name: { eq: "rounded-corner" } }) {
+				nodes {
+					childImageSharp {
+						fluid(fit: COVER) {
+							...GatsbyImageSharpFluid
+						}
+					}
+				}
+			}
+		}
+	`)
+	console.log(data)
+	const roundedCorner = data.allFile.nodes[0].childImageSharp.fluid
+
 	return (
 		<Wrapper>
 			<FluidContainer>
@@ -17,16 +35,27 @@ const PageHeader = () => {
 					</Section>
 				</InnerContainer>
 			</FluidContainer>
+			<ImageContainer>
+				<Img fluid={roundedCorner} />
+			</ImageContainer>
 		</Wrapper>
 	)
 }
 
 const Wrapper = styled.div`
 	position: fixed;
+	z-index: 1000;
 	top: 0;
 	left: 0;
 	width: 100%;
 	background: black;
+`
+
+const ImageContainer = styled.div`
+	position: absolute;
+	top: 100%;
+	width: var(--border-radius-big);
+	height: var(--border-radius-big);
 `
 
 const InnerContainer = styled.div`

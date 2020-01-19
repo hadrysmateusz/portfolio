@@ -15,6 +15,8 @@ const Hero = () => {
 }
 
 const Wrapper = styled.div`
+	position: relative;
+	z-index: 800;
 	background: var(--gradient-accent);
 	padding: 48px 0;
 	border-radius: var(--border-radius-big) 0 var(--border-radius-big) 0;
