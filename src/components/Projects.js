@@ -33,7 +33,7 @@ const Projects = () => {
 	return (
 		<Wrapper>
 			<FluidContainer>
-				<H2>Recent Projects</H2>
+				<H2 id="projects">Recent Projects</H2>
 				<Grid>
 					{projects.map((project) => (
 						<ProjectPreview

@@ -28,7 +28,7 @@ const Skills = () => {
 	return (
 		<GradientBackground>
 			<FluidContainer>
-				<H2>My Skills</H2>
+				<H2 id="skills">My Skills</H2>
 				<Grid>
 					{skills.map((skill) => (
 						<Skill

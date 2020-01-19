@@ -29,9 +29,9 @@ const PageHeader = () => {
 				<InnerContainer>
 					<Section>Social Media</Section>
 					<Section>
-						<NavLink>Projects</NavLink>
-						<NavLink>Blog</NavLink>
-						<NavLink>Contact</NavLink>
+						<NavLink to="#projects">Projects</NavLink>
+						<NavLink to="#blog">Blog</NavLink>
+						<NavLink to="#blog">Contact</NavLink>
 					</Section>
 				</InnerContainer>
 			</FluidContainer>
