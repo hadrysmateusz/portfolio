@@ -7,8 +7,6 @@ import PrimaryButton from "./PrimaryButton"
 import Button from "./Button"
 
 const ProjectPreview = ({ name, image, description, liveLink, sourceLink }) => {
-	console.log(image)
-
 	return (
 		<Wrapper>
 			<ImageContainer>
