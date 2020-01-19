@@ -31,23 +31,29 @@ const Projects = () => {
 	const projects = data.allProjectsYaml.nodes
 
 	return (
-		<FluidContainer>
-			<H2>Recent Projects</H2>
-			<Grid>
-				{projects.map((project) => (
-					<ProjectPreview
-						key={project.id}
-						name={project.name}
-						description={project.description}
-						image={project.previewImage.childImageSharp.fluid}
-						liveLink={project.liveLink}
-						sourceLink={project.sourceLink}
-					/>
-				))}
-			</Grid>
-		</FluidContainer>
+		<Wrapper>
+			<FluidContainer>
+				<H2>Recent Projects</H2>
+				<Grid>
+					{projects.map((project) => (
+						<ProjectPreview
+							key={project.id}
+							name={project.name}
+							description={project.description}
+							image={project.previewImage.childImageSharp.fluid}
+							liveLink={project.liveLink}
+							sourceLink={project.sourceLink}
+						/>
+					))}
+				</Grid>
+			</FluidContainer>
+		</Wrapper>
 	)
 }
+
+const Wrapper = styled.div`
+	padding-bottom: 160px;
+`
 
 const Grid = styled.div`
 	display: grid;
