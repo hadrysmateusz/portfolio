@@ -60,3 +60,14 @@ export const H3 = styled.h3`
 		line-height: 56px;
 	}
 `
+
+export const SubHeading = styled.div`
+	${heading}
+	color: rgba(255,255,255,0.8);
+	font-size: 18px;
+	line-height: 24px;
+	@media (min-width: 732px) {
+		font-size: 30px;
+		line-height: 40px;
+	}
+`
