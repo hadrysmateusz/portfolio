@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
 	--color-accent-orange: #fd975e;
 
 	--gradient-accent: linear-gradient(90deg, var(--color-accent-pink) 0%, var(--color-accent-orange) 100%);
+	--gradient-black: linear-gradient(to bottom, #161616, black);
 
 	--border-radius-big: 60px;
 	--border-radius-md: 14px;

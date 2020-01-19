@@ -3,7 +3,7 @@ import "normalize.css"
 import "typeface-poppins"
 import styled from "styled-components"
 
-import GlobalStyles from "./globalStyles"
+import GlobalStyles from "../globalStyles"
 import PageHeader from "./PageHeader"
 
 const App = ({ children }) => (
