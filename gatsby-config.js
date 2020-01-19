@@ -1,6 +1,6 @@
 module.exports = {
 	siteMetadata: {
-		title: `Mateusz Hadryś | Web Dev`,
+		title: `Mateusz Hadryś - Web Dev`,
 		description: `My personal web development portfolio and blog.`,
 		author: `Mateusz Hadryś`
 	},
@@ -9,8 +9,15 @@ module.exports = {
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
-				name: `projects`,
+				name: `data`,
 				path: `${__dirname}/src/data`
+			}
+		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `assets`,
+				path: `${__dirname}/src/assets`
 			}
 		},
 		{
@@ -19,6 +26,14 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-styled-components`,
+		{
+			resolve: `gatsby-plugin-react-svg`,
+			options: {
+				rule: {
+					include: /assets/
+				}
+			}
+		},
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {

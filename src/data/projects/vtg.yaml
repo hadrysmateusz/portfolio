@@ -1,6 +1,6 @@
 id: "vtg"
 name: "Vivaldi Thumbnail Generator"
 description: "React Single Page Application that generates thumbnails on the client-side using the Canvas API. It supports extensive customisation, generating multiple images at once and downloading them as a single zip archive."
-previewImage: "../images/preview-vtg.png"
+previewImage: "../../assets/images/preview-vtg.png"
 liveLink: "https://vivaldi-thumbnails.netlify.com/"
 sourceLink: "https://github.com/hadrysmateusz/vivaldi-thumbnail-generator"
