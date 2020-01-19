@@ -8,29 +8,37 @@ import { gradientText } from "../styleUtils"
 
 const About = () => {
 	return (
-		<FluidContainer>
-			<Wrapper>
-				<H2>
-					Web <AccentedText>Developer</AccentedText> &{" "}
-					<AccentedText>Designer</AccentedText>
-				</H2>
-				<AboutTextBlock>
-					I love creating web applications, from <b>design</b> through <b>frontend</b> to{" "}
-					<b>server-side</b> code. <b>React</b> is my preferred framework, but I love
-					learning new things.
-				</AboutTextBlock>
-				<PrimaryButton>Contact Me</PrimaryButton>
-			</Wrapper>
-		</FluidContainer>
+		<Wrapper>
+			<FluidContainer>
+				<InnerContainer>
+					<H2>
+						Web <AccentedText>Developer</AccentedText> &{" "}
+						<AccentedText>Designer</AccentedText>
+					</H2>
+					<AboutTextBlock>
+						I love creating web applications, from <b>design</b> through <b>frontend</b>{" "}
+						to <b>server-side</b> code. <b>React</b> is my preferred framework, but I love
+						learning new things.
+					</AboutTextBlock>
+					<PrimaryButton>Contact Me</PrimaryButton>
+				</InnerContainer>
+			</FluidContainer>
+		</Wrapper>
 	)
 }
 
 const Wrapper = styled.div`
+	margin-top: -120px;
+	padding-top: 120px;
+	background: linear-gradient(to bottom, #161616 60px, black 95%);
+`
+
+const InnerContainer = styled.div`
+	padding: 120px 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	padding: 100px 0;
 `
 
 const AccentedText = styled.span`
