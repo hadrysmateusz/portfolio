@@ -3,29 +3,39 @@ import FluidContainer from "./FluidContainer"
 import styled from "styled-components"
 import PrimaryButton from "./PrimaryButton"
 
-import { H2, TextBlock } from "./Typography"
+import { H2, TextBlock, SubHeading } from "./Typography"
 import { gradientText } from "../styleUtils"
+import { EMAIL } from "../const"
 
 const About = () => {
 	return (
 		<Wrapper>
 			<FluidContainer>
 				<InnerContainer>
-					<H2>
-						Web <AccentedText>Developer</AccentedText> &{" "}
-						<AccentedText>Designer</AccentedText>
-					</H2>
+					<SubHeading>I'm a</SubHeading>
+					<HeadingContainer>
+						<H2>
+							Web <AccentedText>Developer</AccentedText> &{" "}
+							<AccentedText>Designer</AccentedText>
+						</H2>
+					</HeadingContainer>
 					<AboutTextBlock>
 						I love creating web applications, from <b>design</b> through <b>frontend</b>{" "}
 						to <b>server-side</b> code. <b>React</b> is my preferred framework, but I love
 						learning new things.
 					</AboutTextBlock>
-					<PrimaryButton>Contact Me</PrimaryButton>
+					<a href={"mailto:" + EMAIL}>
+						<PrimaryButton>Contact Me</PrimaryButton>
+					</a>
 				</InnerContainer>
 			</FluidContainer>
 		</Wrapper>
 	)
 }
+
+const HeadingContainer = styled.div`
+	margin: 8px 0;
+`
 
 const Wrapper = styled.div`
 	margin-top: -120px;

@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import { H3, TextBlock } from "./Typography"
 import PrimaryButton from "./PrimaryButton"
 import Button from "./Button"
+import GithubIcon from "../assets/icons/github.svg"
 
 const ProjectPreview = ({ name, image, description, liveLink, sourceLink }) => {
 	return (
@@ -19,7 +20,9 @@ const ProjectPreview = ({ name, image, description, liveLink, sourceLink }) => {
 					<PrimaryButton>Go to Website</PrimaryButton>
 				</a>
 				<a href={sourceLink} target="_blank" rel="noreferrer noopener">
-					<Button>Source Code</Button>
+					<Button>
+						<GithubIcon width={28} height={28} /> Source Code
+					</Button>
 				</a>
 			</ButtonContainer>
 		</Wrapper>

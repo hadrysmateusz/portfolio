@@ -1,12 +1,26 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 import FluidContainer from "./FluidContainer"
+import SocialMedia from "./SocialMedia"
 
 const PageHeader = () => {
+	const [showSocial, setShowSocial] = useState(false)
+
+	useScrollPosition(
+		({ currPos }) => {
+			const shouldShow = currPos.y > 220
+			if (shouldShow !== showSocial) setShowSocial(shouldShow)
+		},
+		[showSocial],
+		null,
+		window
+	)
+
 	const data = useStaticQuery(graphql`
 		query {
 			allFile(filter: { name: { eq: "rounded-corner" } }) {
@@ -20,14 +34,14 @@ const PageHeader = () => {
 			}
 		}
 	`)
-	console.log(data)
+
 	const roundedCorner = data.allFile.nodes[0].childImageSharp.fluid
 
 	return (
 		<Wrapper>
 			<FluidContainer>
 				<InnerContainer>
-					<Section>Social Media</Section>
+					<Section>{showSocial && <SocialMedia />}</Section>
 					<Section>
 						<NavLink to="#projects">Projects</NavLink>
 						<NavLink to="#blog">Blog</NavLink>

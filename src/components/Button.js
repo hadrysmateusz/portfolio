@@ -55,7 +55,7 @@ const Button = styled.button`
 	white-space: nowrap;
 	svg {
 		margin-right: 8px;
-		margin-left: -4px;
+		margin-left: -8px;
 	}
 	${(p) => buttonVariants[p.variant]}
 	${(p) => buttonSizes[p.size]}
