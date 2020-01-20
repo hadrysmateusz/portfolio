@@ -1,7 +1,7 @@
 import React from "react"
 import FluidContainer from "./FluidContainer"
 import styled from "styled-components"
-import PrimaryButton from "./PrimaryButton"
+import Button from "./Button"
 
 import { H2, TextBlock, SubHeading } from "./Typography"
 import { gradientText } from "../styleUtils"
@@ -25,7 +25,7 @@ const About = () => {
 						learning new things.
 					</AboutTextBlock>
 					<a href={"mailto:" + EMAIL}>
-						<PrimaryButton>Contact Me</PrimaryButton>
+						<Button variant="primary">Contact Me</Button>
 					</a>
 				</InnerContainer>
 			</FluidContainer>

@@ -3,7 +3,6 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 
 import { H3, TextBlock } from "./Typography"
-import PrimaryButton from "./PrimaryButton"
 import Button from "./Button"
 import GithubIcon from "../assets/icons/github.svg"
 
@@ -17,7 +16,7 @@ const ProjectPreview = ({ name, image, description, liveLink, sourceLink }) => {
 			<TextBlock>{description}</TextBlock>
 			<ButtonContainer>
 				<a href={liveLink} target="_blank" rel="noreferrer noopener">
-					<PrimaryButton>Go to Website</PrimaryButton>
+					<Button variant="primary">Go to Website</Button>
 				</a>
 				<a href={sourceLink} target="_blank" rel="noreferrer noopener">
 					<Button>
@@ -29,7 +28,9 @@ const ProjectPreview = ({ name, image, description, liveLink, sourceLink }) => {
 	)
 }
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+	min-width: 0;
+`
 const ImageContainer = styled.div`
 	margin-bottom: 32px;
 	position: relative;
@@ -47,10 +48,18 @@ const ImageContainer = styled.div`
 	}
 `
 const ButtonContainer = styled.div`
-	display: grid;
-	grid-auto-flow: column;
-	grid-auto-columns: min-content;
-	gap: 24px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: -8px;
+	> * {
+		margin: 8px;
+	}
+	@media (min-width: 732px) {
+		margin: -16px;
+		> * {
+			margin: 16px;
+		}
+	}
 `
 
 export default ProjectPreview
