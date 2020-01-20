@@ -20,9 +20,9 @@ const About = () => {
 						</H2>
 					</HeadingContainer>
 					<AboutTextBlock>
-						I love creating web applications, from <b>design</b> through <b>frontend</b>{" "}
-						to <b>server-side</b> code. <b>React</b> is my preferred framework, but I love
-						learning new things.
+						I love making things and writing about it. I design and code web applications
+						that are fast and beautiful. If you need a website, contact me and I will help
+						you stand out from the competition.
 					</AboutTextBlock>
 					<a href={"mailto:" + EMAIL}>
 						<Button variant="primary">Contact Me</Button>
