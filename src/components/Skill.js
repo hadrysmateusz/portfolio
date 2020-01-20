@@ -23,12 +23,19 @@ const Wrapper = styled.div`
 		grid-template-columns: 100px 1fr;
 		gap: var(--page-padding);
 	}
-	@media (min-width: 1024px) {
-		grid-template-columns: 160px 1fr;
+	@media (min-width: 1200px) {
+		grid-template-columns: 140px 1fr;
 		gap: var(--page-padding);
 	}
 `
 const IconContainer = styled.div``
-const ContentContainer = styled.div``
+const ContentContainer = styled.div`
+	${TextBlock} {
+		margin: 4px 0;
+		@media (min-width: 520px) {
+			margin: 8px 0;
+		}
+	}
+`
 
 export default Skill

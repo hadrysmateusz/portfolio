@@ -53,7 +53,7 @@ const GradientBackground = styled.div`
 const Grid = styled.div`
 	display: grid;
 	margin-top: 32px;
-	gap: 8px;
+	gap: 16px;
 	@media (min-width: 732px) {
 		gap: 40px;
 		grid-template-columns: repeat(2, 1fr);
