@@ -7,7 +7,7 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 import FluidContainer from "./FluidContainer"
 import SocialMedia from "./SocialMedia"
-import { LINK_MEDIUM } from "../const"
+import { LINK_MEDIUM, EMAIL } from "../const"
 
 const PageHeader = () => {
 	const [showSocial, setShowSocial] = useState(false)
@@ -19,7 +19,7 @@ const PageHeader = () => {
 		},
 		[showSocial],
 		null,
-		window
+		true
 	)
 
 	const data = useStaticQuery(graphql`
@@ -46,10 +46,12 @@ const PageHeader = () => {
 					<Section>
 						<NavLink to="#projects">Projects</NavLink>
 						{/* TODO: replace with internal link to personal blog */}
-						<NavLink href={LINK_MEDIUM} as="a">
+						<NavLink as="a" href={LINK_MEDIUM}>
 							Blog
 						</NavLink>
-						<NavLink to="#blog">Contact</NavLink>
+						<NavLink as="a" href={"mailto:" + EMAIL}>
+							Contact
+						</NavLink>
 					</Section>
 				</InnerContainer>
 			</FluidContainer>
