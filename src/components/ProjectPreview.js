@@ -39,7 +39,7 @@ const ImageContainer = styled.div`
 	::after {
 		display: block;
 		content: "";
-		background: rgba(0, 0, 0, 0.3);
+		background: rgba(0, 0, 0, 0.45);
 		position: absolute;
 		top: 0;
 		left: 0;
