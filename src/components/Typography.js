@@ -36,10 +36,10 @@ const heading = css`
 export const H1 = styled.h1`
 	${heading}
 	font-size: 48px;
-	line-height: 72px;
+	line-height: 56px;
 	@media (min-width: 732px) {
 		font-size: 48px;
-		line-height: 72px;
+		line-height: 56px;
 	}
 `
 export const H2 = styled.h2`
@@ -48,7 +48,7 @@ export const H2 = styled.h2`
 	line-height: 36px;
 	@media (min-width: 732px) {
 		font-size: 48px;
-		line-height: 72px;
+		line-height: 56px;
 	}
 `
 export const H3 = styled.h3`

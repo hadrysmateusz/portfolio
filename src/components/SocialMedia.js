@@ -34,14 +34,28 @@ const Wrapper = styled.div`
 	display: grid;
 	grid-auto-flow: column;
 	grid-auto-columns: min-content;
-	gap: 24px;
+	gap: 12px;
+	@media (min-width: 400px) {
+		gap: 16px;
+	}
+	@media (min-width: 732px) {
+		gap: 24px;
+	}
 	width: auto;
 `
 
 const Link = styled.a`
-	width: 32px;
-	height: 32px;
-	padding: 2px;
+	width: 22px;
+	height: 22px;
+	@media (min-width: 400px) {
+		padding: 2px;
+		width: 24px;
+		height: 24px;
+	}
+	@media (min-width: 732px) {
+		width: 32px;
+		height: 32px;
+	}
 `
 
 export default SocialMedia

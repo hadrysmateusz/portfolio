@@ -44,7 +44,10 @@ const Wrapper = styled.div`
 `
 
 const InnerContainer = styled.div`
-	padding: 120px 0;
+	padding: 60px 0;
+	@media (min-width: 732px) {
+		padding: 120px 0;
+	}
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

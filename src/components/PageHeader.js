@@ -86,14 +86,26 @@ const InnerContainer = styled.div`
 const Section = styled.div`
 	display: grid;
 	grid-auto-flow: column;
-	gap: 32px;
+	gap: 12px;
+	@media (min-width: 400px) {
+		gap: 16px;
+	}
+	@media (min-width: 732px) {
+		gap: 32px;
+	}
 `
 
 const NavLink = styled(Link)`
 	text-transform: uppercase;
 	font-weight: var(--fw-bold);
-	font-size: 24px;
 	letter-spacing: -0.01em;
+	font-size: 11px;
+	@media (min-width: 400px) {
+		font-size: 12px;
+	}
+	@media (min-width: 732px) {
+		font-size: 24px;
+	}
 `
 
 export default PageHeader

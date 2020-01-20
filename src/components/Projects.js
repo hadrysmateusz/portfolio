@@ -52,7 +52,10 @@ const Projects = () => {
 }
 
 const Wrapper = styled.div`
-	padding-bottom: 160px;
+	padding-bottom: 80px;
+	@media (min-width: 732px) {
+		padding-bottom: 160px;
+	}
 `
 
 const Grid = styled.div`
