@@ -7,6 +7,7 @@ import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 import FluidContainer from "./FluidContainer"
 import SocialMedia from "./SocialMedia"
+import { LINK_MEDIUM } from "../const"
 
 const PageHeader = () => {
 	const [showSocial, setShowSocial] = useState(false)
@@ -44,7 +45,10 @@ const PageHeader = () => {
 					<Section>{showSocial && <SocialMedia />}</Section>
 					<Section>
 						<NavLink to="#projects">Projects</NavLink>
-						<NavLink to="#blog">Blog</NavLink>
+						{/* TODO: replace with internal link to personal blog */}
+						<NavLink href={LINK_MEDIUM} as="a">
+							Blog
+						</NavLink>
 						<NavLink to="#blog">Contact</NavLink>
 					</Section>
 				</InnerContainer>
