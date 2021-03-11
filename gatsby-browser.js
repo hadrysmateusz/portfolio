@@ -1,7 +1,18 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React from "react"
+import styled, { ThemeProvider } from "styled-components/macro"
 
-// You can delete this file if you're not using it
+import GlobalStyles from "./src/globalStyles"
+import PageHeader from "./src/components/PageHeader"
+import ThemeDefault from "./src/themes/default"
+
+export const wrapRootElement = ({ element }) => (
+  <ThemeProvider theme={ThemeDefault}>
+    <GlobalStyles />
+    <PageHeader />
+    <PageContainer>{element}</PageContainer>
+  </ThemeProvider>
+)
+
+const PageContainer = styled.div`
+  margin-top: var(--header-height);
+`
