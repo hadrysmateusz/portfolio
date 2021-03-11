@@ -1,73 +1,48 @@
 import styled, { css } from "styled-components/macro"
+import { typography, space, color } from "styled-system"
 
-const internalLinkStyles = css`
-	a,
-	a:visited {
-		color: var(--gradient-accent);
-		text-decoration: underline;
-	}
+const childLinkStyles = css`
+  a,
+  a:visited {
+    color: var(--gradient-accent);
+    text-decoration: underline;
+  }
 `
 
-export const TextBlock = styled.div`
-	color: #e2e2e2;
+export const P = styled.p`
+  font-size: ${(p) => p.theme.fontSizes[1]}px;
+  color: #e2e2e2;
+  margin: 24px 0 32px;
+  
+  ${typography}
+  ${space}
+  ${color}
 
-	margin: 16px auto 24px;
-	font-size: 14px;
-	line-height: 20px;
-
-	@media (min-width: 732px) {
-		margin: 24px auto 32px;
-		font-size: 18px;
-		line-height: 24px;
-	}
-
-	${internalLinkStyles}
+  ${childLinkStyles}
 `
 
-const heading = css`
-	margin: 0;
-	font-weight: var(--fw-bold);
-	letter-spacing: -0.01em;
-	color: white;
+const headingCommon = css`
+  margin: 0;
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+  color: white;
 
-	${internalLinkStyles}
+  ${typography}
+  ${space}
+  ${color}
+
+  ${childLinkStyles}
 `
 
 export const H1 = styled.h1`
-	${heading}
-	font-size: 48px;
-	line-height: 56px;
-	@media (min-width: 732px) {
-		font-size: 48px;
-		line-height: 56px;
-	}
+  font-size: ${(p) => p.theme.fontSizes[4]}px;
+  ${headingCommon};
 `
 export const H2 = styled.h2`
-	${heading}
-	font-size: 24px;
-	line-height: 36px;
-	@media (min-width: 732px) {
-		font-size: 48px;
-		line-height: 56px;
-	}
+  font-size: ${(p) => p.theme.fontSizes[4]}px;
+  ${headingCommon}
 `
 export const H3 = styled.h3`
-	${heading}
-	font-size: 18px;
-	line-height: 24px;
-	@media (min-width: 732px) {
-		font-size: 40px;
-		line-height: 56px;
-	}
-`
-
-export const SubHeading = styled.div`
-	${heading}
-	color: rgba(255,255,255,0.8);
-	font-size: 18px;
-	line-height: 24px;
-	@media (min-width: 732px) {
-		font-size: 30px;
-		line-height: 40px;
-	}
+  font-size: ${(p) => p.theme.fontSizes[3]}px;
+  ${headingCommon}
 `
