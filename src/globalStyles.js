@@ -14,14 +14,20 @@ const GlobalStyles = createGlobalStyle`
 	--color-facebook: #3c5a99;
 	--color-twitter: #1da1f2;
 
-	--color-accent-pink: #f20476;
-	--color-accent-orange: #fd975e;
+	--color-accent: #ED355A;
 
-	--gradient-accent: linear-gradient(90deg, var(--color-accent-pink) 0%, var(--color-accent-orange) 100%);
 	--gradient-black: linear-gradient(to bottom, #161616, black);
+
+	--gray-100: #0E0D13;
+	--gray-200: #19181F;
+	--gray-300: #232427;
+	--gray-400: #484952;
+	--gray-500: #6E6F78;
+	--gray-800: #c1c2c4;
 
 	--border-radius-big: 60px;
 	--border-radius-md: 14px;
+	--border-radius-sm: 8px;
 
 	--fw-light: 300;
 	--fw-normal: 400;
@@ -47,8 +53,13 @@ body {
 	margin: 0;
 	font-weight: 400;
 	font-family: var(--font-stack);
-	background: black;
+	background: var(--gray-100);
 	color: white;
+	line-height: 1.6;
+}
+
+[id] {
+	scroll-margin-top: calc( var(--header-height) + 24px );
 }
 `
 
