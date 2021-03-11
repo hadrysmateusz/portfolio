@@ -1,0 +1,199 @@
+---
+title: Read, Edit & Write Files with Client-Side JavaScript
+subtitle: An in depth guide to FileReader API and object URLs
+slug: /clientside-javascript-file-handling
+date: 2020-01-04
+featureImage: featureImage.png
+---
+
+It can be hard to make a website stand out.
+
+So here’s a little trick that will improve any landing page or header: Use gradient text.
+
+Just make sure to not overuse it. Gradients should never be used for longer text. Instead, use them to make headings or specific words more eye-catching.
+
+What might surprise you — especially if you have prior experience with design tools — is that you can’t set a gradient as the text color directly. For example `color: linear-gradient(yellow, red);` won’t work.
+
+But gradient text **can** be achieved in CSS, it just requires a few extra steps.
+
+It’s best to start with some big, preferably bold text. This will make the gradient more visible and the text more readable.
+
+![Big Bold Text](vivaldi_dbcuZxYpz3.png)
+
+The text I’ll be using is styled using the [font shorthand](https://medium.com/swlh/full-text-styling-with-a-single-line-of-css-838e8c666f4d) with the following values:
+
+```css
+font: bold 120px Poppins, sans-serif;
+```
+
+---
+
+### Step 1: Add a Gradient
+
+First, we need to add the gradient as a background.
+
+![[vivaldi_t6ncTzQ3V3.png]]
+
+By default the gradient will go from top to bottom, but we can also specify a direction.
+
+If you want a horizontal gradient, `to right` will do the trick, but a slight angle like `60deg` looks more natural.
+
+```css
+background-image: linear-gradient(60deg, #e21143, #ffb03a);
+```
+
+![[vivaldi_ieyIP11PYR.png]]
+
+If you want to learn how to create any gradient you want, or simply need a refresher, check out my [Ultimate Guide to CSS Gradients](https://hadrysmateusz.medium.com/complete-guide-to-css-gradients-f6212760a268).
+
+### Step 2: Clip It
+
+Now, we need to make the gradient only show where the text is. We can do that by using `background-clip`.
+
+![[vivaldi_BY8cW5RDSD.png]]
+
+TK CAPTION: To learn more about this and other background properties, check out my article explaining [all background properties](https://hadrysmateusz.medium.com/learn-all-8-background-css-properties-in-5-minutes-210635e060be).
+
+You might already know that this property lets us clip the background to the border, padding, or content [box](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model#parts_of_a_box) of an element.
+
+But it can also clip the background to the text.
+
+```css
+.gradient-text {
+  background-image: linear-gradient(60deg, #e21143, #ffb03a);
+  background-clip: text;
+}
+```
+
+If you try this code, it will look like the gradient just disappeared. That’s because the gradient is **under** the text.
+
+### Step 3: Reveal It
+
+To show the gradient underneath our text, we need to make the text transparent. We can do that by setting `color: transparent`.
+
+![[dXI57BqLSU.gif]]
+
+```css
+.gradient-text {
+  background-image: linear-gradient(60deg, #e21143, #ffb03a);
+  background-clip: text;
+  color: transparent;
+}
+```
+
+You might be tempted to use the [background shorthand](https://medium.com/swlh/the-fastest-way-to-set-css-backgrounds-47e7e5e17bab) here. Don’t.
+
+Unfortunately, the `background` shorthand version of `background-clip` doesn’t support the `text` keyword.
+
+TK I could include a Putting it All Together section here that would also go over the html and actual recommendations for classes and selectors you should use + a CodePen example (this section could also be moved to the very bottom)
+
+## Fallback
+
+If you must support Internet Explorer, you'll have to fallback to a flat color.
+
+Wrap everything we've written before in an `@supports` rule. This way it'll only be rendered in modern browsers.
+
+Then, outside of the `@supports` block, set a fallback color for the text. It should probably be a color that appears in your gradient and works well with the rest of the design.
+
+```css
+.gradient-text {
+  color: red;
+}
+
+@supports (background-clip: text) {
+  .gradient-text {
+    background-image: linear-gradient(60deg, #e21143, #ffb03a);
+    background-clip: text;
+    color: transparent;
+  }
+}
+```
+
+Make sure the fallback comes before the actual gradient styles.
+
+> **NOTE:** Even though the @supports rule itself is also not supported in IE, everything inside will still be ignored, which is exactly what we want.
+
+---
+
+v1.0
+
+Gradient text is not suitable for body text. It works best in hero sections, on landing pages, etc.
+
+To show off the gradient and make the text readable, we need the text to be big and bold.
+
+```css
+font-size: 32px;
+font-weight: bold;
+```
+
+I'll also include a font that I think will work better with this effect. In my opinion sans-serif fonts like Poppins work best.
+
+```css
+font-family: "Poppins", sans-serif;
+```
+
+We can put all of these properties on a single line, using the [[Font Shorthand|font shorthand]].
+
+```css
+font: bold 32px "Poppins", sans-serif;
+```
+
+TK IMAGE
+
+Now, let's add the gradient.
+
+```css
+background-image: linear-gradient(red, blue);
+```
+
+TK IMAGE
+
+_But this is just a gradient background, not text!_ - Don't worry, we'll get to that 😉
+
+This vertical gradient is probably not what you want though. We simply change it to `to right` to make it horizontal, but a slight angle looks more natural.
+
+```css
+background-image: linear-gradient(60deg, red, blue);
+```
+
+TK IMAGE
+
+If you want to learn how to create any gradient you want, or simply need a refresher, check out my [[CSS Gradients|Complete Guide to CSS Gradients]].
+
+[[CSS Gradients]]
+
+You might be familiar with the `background-clip` property.
+
+It allows us to clip the background to the border, padding, or content box of an element. What you might not have known, is that it can also clip the background to the text itself.
+
+```css
+background-clip: text;
+```
+
+TK IMAGE WITH JUST BLACK TEXT
+
+_...Wait, that's just black text. The gradient disappeared!_
+
+This is the last step. It's also the easiest to forget.
+
+The gradient is still there, and the `background-clip` did its job perfectly. The problem is that the text **covers up the gradient**.
+
+Luckily the fix is super easy.
+
+Set the text color to `transparent`.
+
+```css
+color: transparent;
+```
+
+TK IMAGE
+
+That's better. Let's put it all together now:
+
+```css
+background-image: linear-gradient(60deg, red, blue);
+background-clip: text;
+color: transparent;
+```
+
+You might be tempted to use the [[Background Shorthand|background shorthand]] here. Unfortunately, the shorthand version of `background-clip` doesn't seem to support the `text` keyword.
