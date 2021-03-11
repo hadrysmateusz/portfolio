@@ -1,0 +1,9 @@
+id: "personal"
+type: "Web App"
+name: "Personal Website & Blog"
+description: "Website created with Gatsby. It contains my blog, portfolio, and resume."
+order: 2
+previewImage: "../../assets/images/preview-vtg.png"
+liveLink: "https://vivaldi-thumbnails.netlify.com/"
+sourceLink: "https://github.com/hadrysmateusz/vivaldi-thumbnail-generator"
+# TODO: add correct links and image

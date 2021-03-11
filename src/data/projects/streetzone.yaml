@@ -1,0 +1,9 @@
+id: "streetzone"
+type: "Web App"
+name: "StreetZone"
+description: "A community for Streetwear enthusiasts. Including a marketplace, blog, instant in-app messaging, email and social authentication, and more"
+order: 1
+previewImage: "../../assets/images/preview-vtg.png"
+liveLink: "https://vivaldi-thumbnails.netlify.com/"
+sourceLink: "https://github.com/hadrysmateusz/vivaldi-thumbnail-generator"
+# TODO: add correct links and image
